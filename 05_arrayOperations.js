@@ -10,9 +10,9 @@
  * 
   */
 
-const multiplyByTwo = (array) => {}
+const multiplyByTwo = (array) => array.map((i)=> i * 2)
 
-
+console.log(multiplyByTwo([2,3]));
 /**
  * Utiliser la fonction .filter sur le tableau passé en paramètre
  * retourne un nouveau tableau avec uniquement les nom qui commencent par la lettre "A"
@@ -23,7 +23,9 @@ const multiplyByTwo = (array) => {}
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const filterNameStartByA = (array) => {}
+const filterNameStartByA = (array) => array.filter( (a) => a[0] == "A")
+
+console.log(filterNameStartByA(["Alex","Bob", "Algo", "coco"]));
 
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
