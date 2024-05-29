@@ -1,5 +1,4 @@
-import { sleep } from "../exercices/10_promise";
-
+const {sleep} = require("./10_promise");
 /**
  * Créez une fonction synchrone qui attend 2 seconde puis execute le callback passé en paramètre
  * vous pouvez utiliser la fonction sleep créé précedement: const {sleep} = require("../exercices/10_promise");
@@ -10,22 +9,14 @@ import { sleep } from "../exercices/10_promise";
  *    - votre fonction doit être synchrone et ne pas retourner de Promise
  *    - ne pas utiliser async await
  * 
- *//*
-const usingThen = (cb) => {
-    sleep()
-}*/
-const { sleep } = require("../exercices/10_promise");
+ */ 
 
 const usingThen = (cb) => {
     Promise.resolve()
-        .then(() => sleep(2000))  // assuming sleep takes a duration parameter in milliseconds
+        .then(() => sleep(2000))   
         .then(cb);
 };
-
-
-
-
-
+ 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
  * vous pouvez utiliser la fonction sleep créé précedement: const {sleep} = require("../exercices/10_promise");
@@ -37,9 +28,12 @@ const usingThen = (cb) => {
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
+//const { sleep } = require("../exercices/10_promise");
 
-}
+const usingAwait = async (cb) => {
+    await sleep(2000);   
+    cb();
+};
 
 
 /**
@@ -54,12 +48,18 @@ const usingAwait = (cb) => {
  * url de test: https://jsonplaceholder.typicode.com/todos/1
  */
 
-//décommentez la ligne suivante une fois le package installé
-//const axios = require("axios");
+//décommentez la ligne suivante une fois le package installé 
+
+const axios = require("axios");
 
 const apiResponse = async (url) => {
+    try {
+        const response = await axios.get(url);
+        return response.data;   
+    } catch (error) {
+        console.error("Error fetching API data:", error);
+        throw error;
+    }
+};
 
-}
-
-
-export default {usingThen, usingAwait, apiResponse};
+module.exports = {usingThen, usingAwait, apiResponse}; 
