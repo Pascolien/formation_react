@@ -1,4 +1,4 @@
-//const {sleep} = require("../exercices/10_promise");
+import { sleep } from "../exercices/10_promise";
 
 /**
  * Créez une fonction synchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -12,7 +12,11 @@
  * 
  */
 const usingThen = (cb) => {
+    sleep()
 }
+
+
+
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -49,4 +53,4 @@ const apiResponse = async (url) => {
 }
 
 
-module.exports = {usingThen, usingAwait, apiResponse};
+export default {usingThen, usingAwait, apiResponse};
