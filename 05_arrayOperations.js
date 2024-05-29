@@ -37,7 +37,7 @@ console.log(filterNameStartByA(["Alex","Bob", "Algo", "coco"]));
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const sum = (array) => array.reduce((accumlulateur , i) => accumlulateur += i )
+const sum = (array) => array.reduce((accumlulateur , i) =>  accumlulateur += i )
 console.log(sum([2,3,5]));
 
 /**
