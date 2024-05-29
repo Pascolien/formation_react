@@ -10,10 +10,18 @@ import { sleep } from "../exercices/10_promise";
  *    - votre fonction doit être synchrone et ne pas retourner de Promise
  *    - ne pas utiliser async await
  * 
- */
+ *//*
 const usingThen = (cb) => {
     sleep()
-}
+}*/
+const { sleep } = require("../exercices/10_promise");
+
+const usingThen = (cb) => {
+    Promise.resolve()
+        .then(() => sleep(2000))  // assuming sleep takes a duration parameter in milliseconds
+        .then(cb);
+};
+
 
 
 
@@ -32,6 +40,7 @@ const usingThen = (cb) => {
 const usingAwait = (cb) => {
 
 }
+
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre

@@ -59,7 +59,7 @@ console.log(sum([2,3,5]));
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const findUserById = (array,id) => array.find((a) => a.id == 3)
+const findUserById = (array,id) => array.find((a) => a.id == id)?.name ?? null
 
 console.log(findUserById([{id: 1, name: 'John'},
  {id: 2, name: 'Doe'},
