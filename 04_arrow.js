@@ -19,7 +19,7 @@ let arrow1 = a => a
  *   - le mot clée "return" est interdis
  */
 
-let arrow2 = (a, b ) => a
+let arrow2 = (a, b ) => a+1 
 console.log(arrow1(3));
 console.log(arrow2(2,3));
 
